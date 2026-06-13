@@ -63,6 +63,28 @@
     .nav-links { display: flex; align-items: center; gap: 34px; font-size: 14px; color: #48564f; }
     .nav-links a { transition: color .2s ease; }
     .nav-links a:hover { color: var(--ink); }
+    .nav-actions { display: flex; align-items: center; gap: 10px; }
+    .language-switcher {
+      display: inline-flex;
+      padding: 3px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, .55);
+    }
+    .language-option {
+      min-width: 34px;
+      height: 34px;
+      padding: 0 9px;
+      border: 0;
+      border-radius: 999px;
+      color: var(--muted);
+      background: transparent;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: .08em;
+      cursor: pointer;
+    }
+    .language-option.active { color: var(--white); background: var(--green); }
     .nav-button, .button {
       display: inline-flex;
       align-items: center;
@@ -252,6 +274,7 @@
       .nav-links.open { display: flex; }
       .nav-links a { padding: 14px; }
       .nav-button { display: none; }
+      .nav-actions { margin-left: auto; }
       .menu-button { display: block; }
       .hero { min-height: 820px; padding-top: 170px; }
       .hero-content { width: 82%; }
@@ -302,18 +325,24 @@
   <header class="nav-wrap" id="top">
     <nav class="nav shell" aria-label="Main navigation">
       <a class="brand" href="#top" aria-label="waitAround LLC home">
-        <img class="brand-logo" src="waitAroundLogoTransp.png.png" alt="">
+        <img class="brand-logo" src="waitaround-logo.png" alt="">
         <span>waitAround LLC</span>
       </a>
       <div class="nav-links" id="navLinks">
-        <a href="#beliefs">Beliefs</a>
-        <a href="#products">Products</a>
-        <a href="#company">Company</a>
+        <a href="#beliefs" data-i18n="navBeliefs">Beliefs</a>
+        <a href="#products" data-i18n="navProducts">Products</a>
+        <a href="#company" data-i18n="navCompany">Company</a>
       </div>
-      <a class="nav-button" href="#products">Explore products</a>
-      <button class="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
-        <span></span><span></span>
-      </button>
+      <div class="nav-actions">
+        <div class="language-switcher" role="group" aria-label="Select language">
+          <button class="language-option active" type="button" data-lang="en" aria-pressed="true">EN</button>
+          <button class="language-option" type="button" data-lang="es" aria-pressed="false">ES</button>
+        </div>
+        <a class="nav-button" href="#products" data-i18n="navExplore">Explore products</a>
+        <button class="menu-button" type="button" aria-label="Toggle menu" aria-expanded="false" aria-controls="navLinks">
+          <span></span><span></span>
+        </button>
+      </div>
     </nav>
   </header>
 
@@ -447,7 +476,7 @@
     <div class="shell">
       <div class="footer-main">
         <div>
-          <a class="brand" href="#top"><img class="brand-logo" src="waitAroundLogoTransp.png.png" alt=""><span>waitAround LLC</span></a>
+          <a class="brand" href="#top"><img class="brand-logo" src="waitaround-logo.png" alt=""><span>waitAround LLC</span></a>
           <div class="footer-tagline">Human by Design</div>
         </div>
         <div class="footer-col">
@@ -476,6 +505,139 @@
     const menuButton = document.querySelector('.menu-button');
     const navLinks = document.querySelector('.nav-links');
     const revealItems = document.querySelectorAll('.reveal');
+    const languageOptions = document.querySelectorAll('.language-option');
+
+    const translations = {
+      en: {
+        title: 'waitAround LLC | Human by Design',
+        description: 'waitAround LLC creates calm, human-centered software for real-world services.',
+        nav: ['Beliefs', 'Products', 'Company'],
+        explore: 'Explore products',
+        menu: 'Toggle menu',
+        language: 'Select language',
+        eyebrow: 'Product-driven technology',
+        heroTitle: 'Human by<br>Design',
+        heroCopy: "Technology should respect people's time. We build calm, human-centered tools that reduce friction, improve flow, and create more predictable everyday experiences.",
+        heroButton: 'Explore Our Products',
+        heroNote: 'New York · Building with intention',
+        beliefsKicker: 'What we believe',
+        beliefsTitle: 'Better technology begins with a more human point of view.',
+        beliefs: ['Calm over chaos', 'Clarity over complexity', 'Human-centered experiences', 'Technology that respects time'],
+        productsKicker: 'Our products',
+        productsTitle: 'Purposeful tools for the moments that matter.',
+        productTitles: ['Smart Queue', 'Warehouse Digital Board', 'Luxury Transportation', 'Travel Agency'],
+        productCopies: [
+          'Live appointment management designed to reduce waiting and improve customer experience.',
+          'Operational visibility platform that provides teams with real-time clarity and better decision making.',
+          'Premium airport transportation designed to provide a seamless, comfortable, and stress-free travel experience.',
+          'Thoughtful travel planning designed to make every journey feel simpler, clearer, and more personal.'
+        ],
+        companyKicker: 'Built for the real world',
+        companyTitle: 'Practical by nature. Thoughtful by choice.',
+        companyCopy: 'waitAround LLC creates practical products that simplify everyday operations and help organizations work with less friction and more confidence.',
+        process: 'How we work',
+        steps: ['Idea', 'Design', 'Build', 'Improve'],
+        manifestoTitle: "If it doesn't feel calm,<br>it doesn't ship.",
+        manifestoCopy: "Creating thoughtful technology that respects people's time.",
+        tagline: 'Human by Design',
+        location: 'New York, USA',
+        closing: 'Technology with time in mind.'
+      },
+      es: {
+        title: 'waitAround LLC | Humano por Diseño',
+        description: 'waitAround LLC crea software sereno y centrado en las personas para servicios del mundo real.',
+        nav: ['Principios', 'Productos', 'Empresa'],
+        explore: 'Explorar productos',
+        menu: 'Abrir menú',
+        language: 'Seleccionar idioma',
+        eyebrow: 'Tecnología orientada a productos',
+        heroTitle: 'Humano por<br>Diseño',
+        heroCopy: 'Creemos que la tecnología debe respetar el tiempo de las personas. Por eso diseñamos herramientas humanas que reducen la incertidumbre, mejoran el flujo de trabajo y ayudan a las personas a saber qué esperar.',
+        heroButton: 'Explorar Nuestros Productos',
+        heroNote: 'Nueva York · Construyendo con intención',
+        beliefsKicker: 'Lo que creemos',
+        beliefsTitle: 'Una mejor tecnología comienza con una perspectiva más humana.',
+        beliefs: ['Calma sobre caos', 'Claridad sobre complejidad', 'Experiencias centradas en las personas', 'Tecnología que respeta el tiempo'],
+        productsKicker: 'Nuestros productos',
+        productsTitle: 'Herramientas con propósito para los momentos importantes.',
+        productTitles: ['Fila Inteligente', 'Panel Digital de Almacén', 'Transporte de Lujo', 'Agencia de Viajes'],
+        productCopies: [
+          'Gestión de citas en vivo diseñada para reducir la espera y mejorar la experiencia del cliente.',
+          'Plataforma de visibilidad operativa que brinda a los equipos claridad en tiempo real y mejores decisiones.',
+          'Transporte premium al aeropuerto diseñado para ofrecer una experiencia de viaje fluida, cómoda y sin estrés.',
+          'Planificación de viajes cuidadosa para que cada recorrido sea más sencillo, claro y personal.'
+        ],
+        companyKicker: 'Creado para el mundo real',
+        companyTitle: 'Práctico por naturaleza. Cuidadoso por elección.',
+        companyCopy: 'waitAround LLC crea productos prácticos que simplifican las operaciones diarias y ayudan a las organizaciones a trabajar con menos fricción y mayor confianza.',
+        process: 'Cómo trabajamos',
+        steps: ['Idea', 'Diseño', 'Desarrollo', 'Mejora'],
+        manifestoTitle: 'Si no transmite calma,<br>no se lanza.',
+        manifestoCopy: 'Creamos tecnología cuidadosa que respeta el tiempo de las personas.',
+        tagline: 'Humano por Diseño',
+        location: 'Nueva York, EE. UU.',
+        closing: 'Tecnología creada pensando en tu tiempo.'
+      }
+    };
+
+    function setText(selector, value) {
+      const element = document.querySelector(selector);
+      if (element) element.textContent = value;
+    }
+
+    function setLanguage(language) {
+      const copy = translations[language] || translations.en;
+      document.documentElement.lang = language;
+      document.title = copy.title;
+      document.querySelector('meta[name="description"]').setAttribute('content', copy.description);
+      document.querySelectorAll('.nav-links a').forEach((item, index) => item.textContent = copy.nav[index]);
+      setText('.nav-button', copy.explore);
+      menuButton.setAttribute('aria-label', copy.menu);
+      document.querySelector('.language-switcher').setAttribute('aria-label', copy.language);
+      setText('.hero .eyebrow', copy.eyebrow);
+      document.querySelector('.hero h1').innerHTML = copy.heroTitle;
+      setText('.hero-copy', copy.heroCopy);
+      setText('.hero .button', copy.heroButton + ' →');
+      setText('.hero-note', copy.heroNote);
+      setText('.beliefs .kicker', copy.beliefsKicker);
+      setText('.beliefs .section-head h2', copy.beliefsTitle);
+      document.querySelectorAll('.belief h3').forEach((item, index) => item.textContent = copy.beliefs[index]);
+      setText('.products .kicker', copy.productsKicker);
+      setText('.products .section-head h2', copy.productsTitle);
+      document.querySelectorAll('.product-card h3').forEach((item, index) => item.textContent = copy.productTitles[index]);
+      document.querySelectorAll('.product-card p').forEach((item, index) => item.textContent = copy.productCopies[index]);
+      setText('.real-copy .kicker', copy.companyKicker);
+      setText('.real-copy h2', copy.companyTitle);
+      setText('.real-copy p', copy.companyCopy);
+      setText('.process-label', copy.process);
+      document.querySelectorAll('.step span').forEach((item, index) => item.textContent = copy.steps[index]);
+      document.querySelector('.manifesto h2').innerHTML = copy.manifestoTitle;
+      setText('.manifesto p', copy.manifestoCopy);
+      setText('.footer-tagline', copy.tagline);
+
+      const footerColumns = document.querySelectorAll('.footer-col');
+      footerColumns[0].querySelector('h4').textContent = copy.nav[1];
+      footerColumns[0].querySelectorAll('a').forEach((item, index) => item.textContent = copy.productTitles[index]);
+      footerColumns[1].querySelector('h4').textContent = copy.nav[2];
+      const companyLinks = footerColumns[1].querySelectorAll('a');
+      companyLinks[0].textContent = copy.beliefsKicker;
+      companyLinks[1].textContent = copy.process;
+      footerColumns[1].querySelector('span').textContent = copy.location;
+      setText('.footer-bottom span:last-child', copy.closing);
+
+      languageOptions.forEach(option => {
+        const active = option.dataset.lang === language;
+        option.classList.toggle('active', active);
+        option.setAttribute('aria-pressed', String(active));
+      });
+      localStorage.setItem('waitaround-language', language);
+    }
+
+    languageOptions.forEach(option => {
+      option.addEventListener('click', () => setLanguage(option.dataset.lang));
+    });
+
+    setLanguage(localStorage.getItem('waitaround-language') || 'en');
 
     window.addEventListener('scroll', () => {
       navWrap.classList.toggle('scrolled', window.scrollY > 20);
