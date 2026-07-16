@@ -230,6 +230,8 @@ p { margin: 0; }
   box-shadow: 0 1px 0 rgba(16, 27, 38, 0.06);
 }
 .nav__inner {
+  position: relative;
+  z-index: 95;
   display: flex;
   align-items: center;
   gap: var(--space-3);
@@ -452,33 +454,6 @@ p { margin: 0; }
   50% { transform: translateY(calc(-50% - 14px)) translateX(-6px) rotate(-2deg); }
 }
 
-.scroll-cue {
-  position: absolute;
-  bottom: var(--space-4);
-  left: 50%;
-  transform: translateX(-50%);
-  width: 26px;
-  height: 42px;
-  border: 1.6px solid var(--border-strong);
-  border-radius: var(--radius-pill);
-  background: transparent;
-  z-index: 2;
-}
-.scroll-cue span {
-  display: block;
-  width: 4px;
-  height: 8px;
-  border-radius: 2px;
-  background: var(--accent);
-  margin: 8px auto 0;
-  animation: scrollCue 1.8s var(--ease-in-out) infinite;
-}
-@keyframes scrollCue {
-  0% { transform: translateY(0); opacity: 1; }
-  70% { transform: translateY(12px); opacity: 0; }
-  100% { transform: translateY(0); opacity: 0; }
-}
-
 /* ============================================================
    Sections
    ============================================================ */
@@ -646,18 +621,9 @@ p { margin: 0; }
 .contact__inner h2 { margin-top: var(--space-1); }
 .contact__copy {
   color: var(--ink-soft);
-  margin: var(--space-2) auto var(--space-3);
+  margin: var(--space-2) auto var(--space-4);
   max-width: 460px;
 }
-.contact__location {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  color: var(--ink-faint);
-  font-size: 14.5px;
-  margin-bottom: var(--space-4);
-}
-.contact__location svg { color: var(--accent); flex-shrink: 0; }
 
 /* ============================================================
    Footer

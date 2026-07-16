@@ -52,14 +52,6 @@
     if (e.key === 'Escape') closeMenu();
   });
 
-  // Smooth scroll for data-scroll-to triggers (e.g. the hero scroll cue)
-  document.querySelectorAll('[data-scroll-to]').forEach(function (el) {
-    el.addEventListener('click', function () {
-      var target = document.querySelector(el.getAttribute('data-scroll-to'));
-      if (target) target.scrollIntoView({ behavior: prefersReduced ? 'auto' : 'smooth' });
-    });
-  });
-
   // Scroll reveal via IntersectionObserver
   var revealEls = document.querySelectorAll('[data-reveal]');
 
@@ -92,10 +84,10 @@
       'nav.industries': 'Industries',
       'nav.contact': 'Contact',
       'nav.cta': 'Get in touch',
-      'hero.title1': 'Efficient solutions designed to level up',
-      'hero.title2': '<em>your business</em>.',
-      'hero.sub': 'waitAround LLC builds calm, human-centered digital experiences that reduce friction, improve workflows, and help businesses operate more efficiently.',
-      'hero.cta1': 'Start a conversation',
+      'hero.title1': 'Work shouldn’t',
+      'hero.title2': 'feel <em>complicated</em>.',
+      'hero.sub': 'At waitAround LLC, we build calm, human-centered digital experiences that reduce friction and make everyday business simpler, calmer, and more predictable.',
+      'hero.cta1': 'Let’s Build',
       'hero.cta2': 'See how we work',
       'mission.eyebrow': 'What we believe',
       'mission.heading': 'Three principles guide everything we build.',
@@ -131,7 +123,6 @@
       'contact.eyebrow': 'Let’s talk',
       'contact.heading': 'Tell us what’s slowing you down.',
       'contact.copy': 'Whether it’s a rough idea or a fully-scoped project, we’d like to hear about it. We usually reply within one business day.',
-      'contact.location': 'Albany, NY',
       'footer.poweredby': 'Powered by',
       'footer.tagline': 'Human by Design',
       'footer.legal': '© {year} waitAround LLC. Human by Design.'
@@ -142,10 +133,10 @@
       'nav.industries': 'Industrias',
       'nav.contact': 'Contacto',
       'nav.cta': 'Hablemos',
-      'hero.title1': 'Soluciones eficientes diseñadas para impulsar',
-      'hero.title2': '<em>tu negocio</em>.',
-      'hero.sub': 'waitAround LLC crea experiencias digitales tranquilas y centradas en las personas que reducen la fricción, mejoran los flujos de trabajo y ayudan a las empresas a operar de manera más eficiente.',
-      'hero.cta1': 'Iniciar una conversación',
+      'hero.title1': 'El trabajo no debería',
+      'hero.title2': 'sentirse <em>complicado</em>.',
+      'hero.sub': 'En waitAround LLC, creamos experiencias digitales tranquilas y centradas en las personas que reducen la fricción y hacen que el día a día empresarial sea más simple, calmado y predecible.',
+      'hero.cta1': 'Construyamos',
       'hero.cta2': 'Ver cómo trabajamos',
       'mission.eyebrow': 'En lo que creemos',
       'mission.heading': 'Tres principios guían todo lo que construimos.',
@@ -181,7 +172,6 @@
       'contact.eyebrow': 'Hablemos',
       'contact.heading': 'Cuéntanos qué te está frenando.',
       'contact.copy': 'Ya sea una idea inicial o un proyecto totalmente definido, nos gustaría escucharte. Normalmente respondemos en un día hábil.',
-      'contact.location': 'Albany, NY',
       'footer.poweredby': 'Desarrollado por',
       'footer.tagline': 'Humano por Diseño',
       'footer.legal': '© {year} waitAround LLC. Humano por Diseño.'
