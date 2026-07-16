@@ -1,0 +1,25 @@
+# Secrets & environment files — never commit these
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.pfx
+id_rsa
+id_rsa.*
+*credentials*.json
+serviceAccount*.json
+
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.log
+.vscode/
+.idea/
+
+# Dependency / build artifacts (if a build step is ever added)
+node_modules/
+dist/
+build/
+*.map

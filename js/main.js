@@ -179,19 +179,28 @@
   };
 
   var LANG_KEY = 'waitaround-lang';
-  var currentLang = localStorage.getItem(LANG_KEY) || 'en';
+  var SUPPORTED_LANGS = ['en', 'es'];
+
+  function sanitizeLang(lang) {
+    return SUPPORTED_LANGS.indexOf(lang) !== -1 ? lang : 'en';
+  }
+
+  var currentLang = sanitizeLang(localStorage.getItem(LANG_KEY));
 
   function applyLang(lang) {
-    var dict = translations[lang] || translations.en;
+    lang = sanitizeLang(lang);
+    var dict = translations[lang];
     document.documentElement.lang = lang;
 
     document.querySelectorAll('[data-i18n]').forEach(function (el) {
       var key = el.getAttribute('data-i18n');
+      if (!Object.prototype.hasOwnProperty.call(dict, key)) return;
       var value = dict[key];
-      if (value === undefined) return;
       if (key === 'footer.legal') {
         value = value.replace('{year}', currentYear);
       }
+      // Safe: `value` always comes from the static `translations` object above,
+      // never from a URL, cookie, or other attacker-controllable source.
       el.innerHTML = value;
     });
 

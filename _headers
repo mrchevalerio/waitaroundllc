@@ -1,0 +1,23 @@
+# Security headers for this static site.
+#
+# GitHub Pages does NOT read this file and does NOT support custom response
+# headers at all — it is included so these headers take effect automatically
+# if the site is ever moved to (or fronted by) a host that does support a
+# _headers file: Netlify, Cloudflare Pages, or Cloudflare Workers/Transform
+# Rules in front of the existing GitHub Pages origin.
+#
+# The <meta> CSP tag in index.html covers script/style/font/image/connect
+# restrictions in the meantime, but frame-ancestors, X-Frame-Options,
+# X-Content-Type-Options, Strict-Transport-Security, Permissions-Policy, and
+# Cross-Origin-Opener-Policy have no meta-tag equivalent and only take effect
+# once these headers are actually served.
+
+/*
+  Content-Security-Policy: default-src 'self'; script-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data:; connect-src 'self'; object-src 'none'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; upgrade-insecure-requests
+  Strict-Transport-Security: max-age=63072000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), payment=(), usb=(), interest-cohort=()
+  Cross-Origin-Opener-Policy: same-origin
+  Cross-Origin-Resource-Policy: same-origin
