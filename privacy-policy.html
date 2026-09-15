@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Privacy Policy — waitAround Providers</title>
+<meta name="description" content="Privacy Policy for the waitAround Providers app. We collect only what's needed to operate the service. We don't sell your data." />
+<meta name="robots" content="noindex, follow" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+<style>
+/* ── Design tokens (exact from waitAround style.css) ── */
+:root {
+  --ink:               #101B26;
+  --ink-soft:          #4B5A68;
+  --ink-faint:         #7C8A97;
+  --accent:            #2961A9;
+  --accent-dark:       #1E4A80;
+  --accent-tint:       #EAF2FA;
+  --accent-tint-strong:#D8E7F5;
+  --bg:                #FAF9F6;
+  --surface:           #FFFFFF;
+  --border:            #E4E3DC;
+  --border-strong:     #D6D4CA;
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --container: 1180px;
+  --space-2: 16px; --space-3: 24px; --space-4: 32px;
+  --space-5: 48px; --space-6: 64px; --space-7: 96px;
+  --radius-sm: 10px; --radius-md: 18px; --radius-lg: 28px; --radius-pill: 999px;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast: 180ms; --dur-med: 320ms; --dur-slow: 700ms;
+  --shadow-sm: 0 1px 2px rgba(16,27,38,.06), 0 1px 1px rgba(16,27,38,.04);
+  --shadow-md: 0 8px 24px rgba(16,27,38,.08), 0 2px 8px rgba(16,27,38,.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--accent); text-decoration: none; }
+a:hover { color: var(--accent-dark); }
+button { font: inherit; cursor: pointer; }
+p { margin: 0 0 1rem; }
+ul { margin: 0.5rem 0 1rem; padding-left: 1.4rem; }
+li { margin: 0.45rem 0; }
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500; line-height: 1.15; margin: 0;
+  color: var(--ink); letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px; border-radius: 4px;
+}
+
+.skip-link {
+  position: absolute; left: -9999px; top: 0;
+  background: var(--ink); color: #fff;
+  padding: 12px 20px; border-radius: var(--radius-sm); z-index: 1000;
+}
+.skip-link:focus { left: var(--space-2); top: var(--space-2); }
+
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding: 0 var(--space-3);
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(250,249,246,0.88);
+  backdrop-filter: blur(16px) saturate(160%);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  border-bottom: 1px solid var(--border);
+}
+.nav__inner {
+  display: flex; align-items: center;
+  gap: var(--space-3); height: 60px;
+}
+.nav__brand {
+  display: flex; align-items: center; gap: 10px;
+  text-decoration: none; margin-right: auto;
+}
+.brand-mark img { width: 30px; height: auto; }
+.nav__brand-text { display: flex; flex-direction: column; line-height: 1.15; }
+.nav__word {
+  font-family: var(--font-display);
+  font-size: 17px; font-weight: 500;
+  color: var(--ink); white-space: nowrap;
+}
+.nav__word-suffix { font-size: .66em; font-weight: 500; color: var(--ink-faint); }
+.nav__tagline {
+  font-size: 10px; font-weight: 600;
+  letter-spacing: .04em; color: var(--ink-faint);
+  text-transform: uppercase; margin-top: 1px;
+}
+.nav__back {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 14px; font-weight: 600;
+  color: var(--ink-soft); text-decoration: none;
+  padding: 8px 16px; border-radius: var(--radius-pill);
+  border: 1px solid var(--border-strong);
+  transition: color var(--dur-fast) var(--ease-out),
+              border-color var(--dur-fast) var(--ease-out),
+              transform var(--dur-fast) var(--ease-out);
+}
+.nav__back:hover {
+  color: var(--accent-dark); border-color: var(--accent);
+  transform: translateY(-1px);
+}
+.nav__back svg { transition: transform var(--dur-fast) var(--ease-out); }
+.nav__back:hover svg { transform: translateX(-2px); }
+
+/* ── HERO ── */
+.pp-hero {
+  padding: var(--space-7) 0 var(--space-6);
+  border-bottom: 1px solid var(--border);
+}
+.pp-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent-dark); margin-bottom: var(--space-2);
+}
+.pp-eyebrow-dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: var(--accent);
+}
+.pp-hero h1 {
+  font-size: clamp(36px, 6vw, 62px);
+  letter-spacing: -0.04em; margin-bottom: var(--space-3);
+  max-width: 680px;
+}
+.pp-updated {
+  font-size: 14px; color: var(--ink-faint); margin-bottom: 0;
+}
+
+/* ── SUMMARY CARD ── */
+.pp-summary {
+  margin: var(--space-6) 0;
+  padding: var(--space-4) var(--space-5);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--space-3) var(--space-4);
+  align-items: start;
+}
+.pp-summary-icon {
+  width: 44px; height: 44px;
+  border-radius: var(--radius-sm);
+  background: var(--accent-tint);
+  border: 1px solid var(--accent-tint-strong);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--accent); flex-shrink: 0;
+  margin-top: 2px;
+}
+.pp-summary-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: 6px;
+}
+.pp-summary-text {
+  font-size: 16px; color: var(--ink-soft);
+  line-height: 1.65; margin: 0;
+}
+.pp-summary-pills {
+  grid-column: 2;
+  display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px;
+}
+.pp-pill {
+  display: inline-flex; align-items: center; gap: 5px;
+  font-size: 12.5px; font-weight: 600;
+  padding: 5px 12px; border-radius: var(--radius-pill);
+  background: var(--accent-tint);
+  color: var(--accent-dark);
+  border: 1px solid var(--accent-tint-strong);
+}
+.pp-pill svg { width: 12px; height: 12px; }
+
+/* ── BODY LAYOUT ── */
+.pp-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 0 var(--space-7);
+  padding: var(--space-6) 0 var(--space-8);
+  align-items: start;
+}
+
+/* sticky TOC */
+.pp-toc {
+  position: sticky; top: 80px;
+  padding: var(--space-3);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.pp-toc-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--ink-faint); margin-bottom: var(--space-2);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--border);
+}
+.pp-toc ol { list-style: none; padding: 0; margin: 0; }
+.pp-toc li { margin: 2px 0; }
+.pp-toc a {
+  display: block; font-size: 13px; font-weight: 500;
+  color: var(--ink-soft); padding: 5px 8px;
+  border-radius: var(--radius-sm);
+  transition: background var(--dur-fast), color var(--dur-fast);
+  text-decoration: none;
+}
+.pp-toc a:hover { background: var(--accent-tint); color: var(--accent-dark); }
+.pp-toc a.active { background: var(--accent-tint); color: var(--accent-dark); font-weight: 600; }
+
+/* sections */
+.pp-sections { min-width: 0; }
+.pp-section {
+  padding: var(--space-5) 0;
+  border-top: 1px solid var(--border);
+}
+.pp-section:first-child { border-top: none; padding-top: 0; }
+.pp-section-num {
+  display: block; font-size: 11px; font-weight: 700;
+  letter-spacing: .1em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 10px;
+}
+.pp-section h2 {
+  font-size: clamp(22px, 3vw, 28px);
+  margin-bottom: var(--space-3);
+}
+.pp-section h3 {
+  font-size: 17px; font-weight: 600;
+  margin: var(--space-4) 0 10px;
+  color: var(--ink);
+}
+.pp-section p, .pp-section li {
+  font-size: 15.5px; color: var(--ink-soft);
+  line-height: 1.7;
+}
+.pp-section li { margin: 8px 0; }
+.pp-section strong { color: var(--ink); font-weight: 600; }
+
+/* ── CONTACT CARD ── */
+.pp-contact-card {
+  margin-top: var(--space-4);
+  padding: var(--space-4);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+}
+.pp-contact-card p { font-size: 15px; margin-bottom: 0.4rem; }
+.pp-contact-card p:last-child { margin-bottom: 0; }
+.pp-contact-card a { font-weight: 600; }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  padding: var(--space-5) 0 var(--space-4);
+  text-align: center;
+}
+.footer__inner { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.footer__mark { width: 24px; height: auto; opacity: 0.7; margin-bottom: 8px; }
+.footer__name {
+  font-family: var(--font-display); font-weight: 500; font-size: 16px;
+  color: var(--accent); text-decoration: none;
+}
+.footer__name:hover { color: var(--accent-dark); }
+.footer__tagline { font-size: 12.5px; color: var(--ink-faint); font-style: italic; }
+.footer__legal {
+  font-size: 12px; color: var(--ink-faint); margin-top: 16px;
+  padding-top: 16px; border-top: 1px solid var(--border); width: 100%;
+  max-width: 240px;
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width: 860px) {
+  .pp-body { grid-template-columns: 1fr; }
+  .pp-toc { display: none; }
+  .pp-summary { grid-template-columns: 1fr; }
+  .pp-summary-icon { display: none; }
+  .pp-summary-pills { grid-column: 1; }
+}
+@media (max-width: 540px) {
+  .wrap { padding: 0 var(--space-2); }
+  .pp-hero { padding: var(--space-5) 0 var(--space-4); }
+  .pp-summary { padding: var(--space-3); }
+}
+</style>
+</head>
+<body>
+
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<!-- ── NAV ── -->
+<header class="nav">
+  <div class="nav__inner wrap">
+    <a href="https://waitaroundllc.com/" class="nav__brand" aria-label="waitAround LLC — home">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/waitaround-logo.png" alt="" width="30"
+          onerror="this.style.display='none'">
+      </span>
+      <span class="nav__brand-text">
+        <span class="nav__word">waitAround<span class="nav__word-suffix">&nbsp;LLC</span></span>
+        <span class="nav__tagline">Human by Design</span>
+      </span>
+    </a>
+    <a href="https://waitaroundllc.com/" class="nav__back" aria-label="Return to waitAround LLC home">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Return home
+    </a>
+  </div>
+</header>
+
+<main id="main">
+  <div class="wrap">
+
+    <!-- ── HERO ── -->
+    <div class="pp-hero">
+      <p class="pp-eyebrow">
+        <span class="pp-eyebrow-dot" aria-hidden="true"></span>
+        waitAround Providers
+      </p>
+      <h1>Privacy Policy</h1>
+      <p class="pp-updated">Effective September 15, 2026</p>
+    </div>
+
+    <!-- ── SUMMARY ── -->
+    <div class="pp-summary" role="note" aria-label="Policy summary">
+      <div class="pp-summary-icon" aria-hidden="true">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div>
+        <div class="pp-summary-label">The short version</div>
+        <p class="pp-summary-text">waitAround Providers helps barbers and hair professionals manage walk-in clients and their waiting line. We collect only the information needed to operate the app, maintain accounts, deliver notifications, provide support, and protect the service.</p>
+      </div>
+      <div class="pp-summary-pills" aria-label="Key commitments">
+        <span class="pp-pill">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          No data selling
+        </span>
+        <span class="pp-pill">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          No third-party ads
+        </span>
+        <span class="pp-pill">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          No cross-app tracking
+        </span>
+      </div>
+    </div>
+
+    <!-- ── BODY (TOC + sections) ── -->
+    <div class="pp-body">
+
+      <!-- Sticky TOC -->
+      <nav class="pp-toc" aria-label="Table of contents">
+        <div class="pp-toc-label">Contents</div>
+        <ol>
+          <li><a href="#s1">1. Scope</a></li>
+          <li><a href="#s2">2. Information we collect</a></li>
+          <li><a href="#s3">3. How we use information</a></li>
+          <li><a href="#s4">4. How we share information</a></li>
+          <li><a href="#s5">5. Data retention</a></li>
+          <li><a href="#s6">6. Your choices and rights</a></li>
+          <li><a href="#s7">7. Information about clients</a></li>
+          <li><a href="#s8">8. Security</a></li>
+          <li><a href="#s9">9. Children</a></li>
+          <li><a href="#s10">10. International processing</a></li>
+          <li><a href="#s11">11. Changes to this policy</a></li>
+          <li><a href="#s12">12. Contact us</a></li>
+        </ol>
+      </nav>
+
+      <!-- Sections -->
+      <div class="pp-sections">
+
+        <section class="pp-section" id="s1">
+          <span class="pp-section-num">01</span>
+          <h2>Scope</h2>
+          <p>This Privacy Policy explains how waitAround LLC ("waitAround," "we," "us," or "our") collects, uses, shares, retains, and protects information when you use the waitAround Providers mobile application and related services.</p>
+          <p>This policy applies to waitAround Providers. A separate or combined policy may apply to other waitAround products and services.</p>
+        </section>
+
+        <section class="pp-section" id="s2">
+          <span class="pp-section-num">02</span>
+          <h2>Information we collect</h2>
+
+          <h3>Account and profile information</h3>
+          <p>When you create or use a provider account, we may collect your name, email address, account identifier, and the professional or business information you choose to add — such as a business name, display name, services, and waiting-room settings. Authentication credentials are processed securely by our authentication provider; we do not have access to your password in readable form.</p>
+
+          <h3>Waiting-room and service information</h3>
+          <p>We process information required to operate your waiting room, including whether your line is open, capacity, client display names, queue positions, timestamps, service status, and actions such as notify next, start service, finish service, skip, remove, or mark no-show. Some of this information is submitted by clients through waitAround's client experience and made available to the provider whose line they joined.</p>
+
+          <h3>Notification and device information</h3>
+          <p>If you enable notifications, we process an Apple Push Notification service device token and related technical information needed to deliver notifications. You can disable notifications at any time in your device settings.</p>
+
+          <h3>Support communications</h3>
+          <p>If you contact us for support, we receive the information you choose to provide, such as your name, contact details, message, and any screenshots or diagnostic details you include.</p>
+
+          <h3>Limited technical information</h3>
+          <p>Our service providers may automatically process limited technical records — such as IP address, device or app version, request timestamps, and server logs — to operate, secure, troubleshoot, and maintain the service.</p>
+        </section>
+
+        <section class="pp-section" id="s3">
+          <span class="pp-section-num">03</span>
+          <h2>How we use information</h2>
+          <p>We use information to:</p>
+          <ul>
+            <li>Create, authenticate, and maintain provider accounts.</li>
+            <li>Operate waiting rooms and keep queue information synchronized.</li>
+            <li>Deliver service-related push notifications.</li>
+            <li>Provide customer support and respond to requests.</li>
+            <li>Maintain the reliability, safety, and security of the app.</li>
+            <li>Prevent misuse, investigate technical problems, and comply with legal obligations.</li>
+          </ul>
+          <p>We do not use personal information for third-party advertising or cross-app tracking.</p>
+        </section>
+
+        <section class="pp-section" id="s4">
+          <span class="pp-section-num">04</span>
+          <h2>How we share information</h2>
+          <p>We do not sell or rent personal information. We share information only when needed to provide and protect the service:</p>
+          <ul>
+            <li><strong>Supabase:</strong> provides backend database, authentication, and related infrastructure used to operate waitAround.</li>
+            <li><strong>Apple:</strong> processes device tokens and notification data through Apple Push Notification service when notifications are enabled.</li>
+            <li><strong>Support services:</strong> if you contact us through WhatsApp or another external service, that service processes the information you submit under its own privacy terms.</li>
+            <li><strong>Legal and safety reasons:</strong> we may disclose information when reasonably necessary to comply with law, protect rights or safety, investigate abuse, or enforce our agreements.</li>
+            <li><strong>Business changes:</strong> information may be transferred as part of a merger, acquisition, financing, reorganization, or sale of assets, subject to appropriate safeguards.</li>
+          </ul>
+          <p>We require service providers that process information for us to protect it and use it only for the services they provide.</p>
+        </section>
+
+        <section class="pp-section" id="s5">
+          <span class="pp-section-num">05</span>
+          <h2>Data retention</h2>
+          <p>We retain account information while your account is active and for as long as reasonably necessary to provide the service, resolve disputes, maintain security, comply with legal obligations, and enforce our agreements. Queue and service records are retained only as long as reasonably necessary for operational, security, and legitimate business purposes.</p>
+          <p>When information is no longer required, we delete it or de-identify it, unless a longer retention period is required by law. Backup copies may remain for a limited period before they are overwritten.</p>
+        </section>
+
+        <section class="pp-section" id="s6">
+          <span class="pp-section-num">06</span>
+          <h2>Your choices and rights</h2>
+          <p>You may update certain account or business information within the app. You may also request access to, correction of, or deletion of your personal information by contacting us using the details below. We may need to verify your identity before completing a request.</p>
+          <p>Deleting an account removes the account and associated personal information unless we must retain specific information for legal, security, fraud-prevention, or dispute-resolution purposes. You may withdraw notification permission through your iPhone settings. If you no longer want us to process information required to provide the service, you may request account deletion and stop using the app.</p>
+          <p>Depending on where you live, you may have additional privacy rights. We will respond to verified requests as required by applicable law.</p>
+        </section>
+
+        <section class="pp-section" id="s7">
+          <span class="pp-section-num">07</span>
+          <h2>Information about clients</h2>
+          <p>Providers may view limited information about clients who join their waiting room — such as a client's display name, position, timestamps, and queue status. Providers must use this information only to manage the waiting line and deliver the requested service, and must not use or disclose it for unrelated purposes.</p>
+        </section>
+
+        <section class="pp-section" id="s8">
+          <span class="pp-section-num">08</span>
+          <h2>Security</h2>
+          <p>We use reasonable administrative, technical, and organizational safeguards designed to protect information. No electronic transmission or storage system is completely secure, so we cannot guarantee absolute security.</p>
+        </section>
+
+        <section class="pp-section" id="s9">
+          <span class="pp-section-num">09</span>
+          <h2>Children</h2>
+          <p>waitAround Providers is a business tool intended for service professionals and is not directed to children under 13. We do not knowingly collect personal information from children under 13 through the provider app. If you believe a child has provided information through this app, contact us so we can review and delete it when appropriate.</p>
+        </section>
+
+        <section class="pp-section" id="s10">
+          <span class="pp-section-num">10</span>
+          <h2>International processing</h2>
+          <p>Information may be processed and stored in the United States or other locations where our service providers operate. Where required, we use appropriate safeguards for international transfers of personal information.</p>
+        </section>
+
+        <section class="pp-section" id="s11">
+          <span class="pp-section-num">11</span>
+          <h2>Changes to this policy</h2>
+          <p>We may update this Privacy Policy as the app or our practices change. We will post the revised policy on this page and update the effective date. If a change materially affects how we handle personal information, we will provide additional notice when appropriate.</p>
+        </section>
+
+        <section class="pp-section" id="s12">
+          <span class="pp-section-num">12</span>
+          <h2>Contact us</h2>
+          <p>If you have questions, privacy requests, or an account-deletion request, we&rsquo;re easy to reach.</p>
+          <div class="pp-contact-card">
+            <p><strong>waitAround LLC</strong></p>
+            <p>Website: <a href="https://waitaroundllc.com/">waitaroundllc.com</a></p>
+            <p>WhatsApp: <a href="https://wa.me/18564484646">+1 (856) 448-4646</a></p>
+          </div>
+        </section>
+
+      </div><!-- /.pp-sections -->
+    </div><!-- /.pp-body -->
+
+  </div><!-- /.wrap -->
+</main>
+
+<!-- ── FOOTER ── -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <img class="footer__mark" src="assets/waitaround-logo.png" alt="" width="24"
+      onerror="this.style.display='none'">
+    <a href="https://waitaroundllc.com/" class="footer__name">waitAround LLC</a>
+    <p class="footer__tagline">Human by Design</p>
+    <p class="footer__legal">&copy; <span id="year"></span> waitAround LLC. Human by Design.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('year').textContent = new Date().getFullYear();
+
+// Active TOC link on scroll
+const sections = document.querySelectorAll('.pp-section[id]');
+const tocLinks = document.querySelectorAll('.pp-toc a');
+
+if (tocLinks.length) {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.classList.remove('active'));
+        const active = document.querySelector('.pp-toc a[href="#' + e.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-20% 0px -70% 0px' });
+  sections.forEach(s => io.observe(s));
+}
+</script>
+</body>
+</html>
