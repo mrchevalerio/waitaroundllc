@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>waitAround — Join your barber's line</title>
+<meta name="description" content="Download waitAround Clients and join your barber's same-day waiting line."/>
+<meta name="robots" content="noindex, nofollow"/>
+
+<!-- App Store URL — single source of truth for this page -->
+<script>
+  var WAITAROUND_CLIENTS_APP_STORE_URL =
+    'https://apps.apple.com/us/app/waitaround-clients/id1505349002';
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,700;1,9..144,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+
+<style>
+/* Scoped entirely to this page — zero global style changes */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { height: 100%; -webkit-text-size-adjust: 100%; }
+
+body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+  background: #FAF9F6;
+  color: #101B26;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 16px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { display: block; max-width: 100%; }
+a { color: #2961A9; text-decoration: none; transition: color 180ms; }
+a:hover { color: #1E4A80; }
+:focus-visible { outline: 2px solid #2961A9; outline-offset: 3px; border-radius: 4px; }
+
+/* NAV */
+.nav {
+  padding: 18px 24px;
+  border-bottom: 1px solid #E4E3DC;
+  background: rgba(250,249,246,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+}
+.nav__brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+.nav__brand img { width: 34px; height: auto; }
+.nav__brand-text { display: flex; flex-direction: column; line-height: 1.2; }
+.nav__name { font-family: 'Fraunces', Georgia, serif; font-size: 18px; font-weight: 700; color: #101B26; white-space: nowrap; }
+.nav__suffix { font-size: 0.65em; font-weight: 600; color: #7C8A97; }
+.nav__tagline { font-size: 11px; font-weight: 600; letter-spacing: 0.02em; color: #7C8A97; }
+
+/* MAIN */
+.main { flex: 1; display: flex; align-items: center; justify-content: center; padding: 64px 24px; }
+.card { width: 100%; max-width: 420px; text-align: center; }
+
+/* Icon — replaced by real logo asset */
+
+/* Text */
+.label { font-size: 11px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: #1E4A80; margin-bottom: 14px; }
+.headline { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 6vw, 34px); font-weight: 500; letter-spacing: -0.03em; line-height: 1.15; color: #101B26; margin-bottom: 16px; }
+.body-copy { font-size: 15px; color: #4B5A68; line-height: 1.7; margin-bottom: 36px; }
+
+/* CTA */
+.cta {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  width: 100%; padding: 16px 24px; border-radius: 999px;
+  background: #101B26; color: #fff;
+  font-family: 'Inter', sans-serif; font-size: 15px; font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(16,27,38,0.15);
+  transition: background 180ms, transform 180ms, box-shadow 180ms;
+}
+.cta:hover { background: #2961A9; color: #fff; transform: translateY(-1px); box-shadow: 0 6px 20px rgba(41,97,169,0.28); }
+.cta:active { transform: scale(0.97); }
+
+/* Invalid */
+.card--invalid .headline { font-size: clamp(22px, 5vw, 28px); }
+
+/* FOOTER */
+.footer { padding: 24px; border-top: 1px solid #E4E3DC; text-align: center; background: #FAF9F6; }
+.footer p { font-size: 12px; color: #7C8A97; }
+.footer a { color: #7C8A97; font-weight: 500; }
+.footer a:hover { color: #2961A9; }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <a href="https://waitaroundllc.com/" class="nav__brand" aria-label="waitAround LLC — home">
+    <img src="/assets/waitaround-logo.png" alt="" width="34" onerror="this.style.display='none'">
+    <span class="nav__brand-text">
+      <span class="nav__name">waitAround<span class="nav__suffix">&nbsp;LLC</span></span>
+      <span class="nav__tagline">Human by Design</span>
+    </span>
+  </a>
+</header>
+
+<main class="main" id="main">
+  <div class="card" id="card">
+
+    <img
+      src="data:image/png;base64,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"
+      alt="waitAround Clients"
+      width="72"
+      height="72"
+      style="display:block;margin:0 auto 28px;border-radius:18px;"
+    />
+
+    <p class="label">waitAround</p>
+    <h1 class="headline">Join your barber's line</h1>
+    <p class="body-copy">
+      Download waitAround Clients, then come back and tap your barber&#8217;s link again.
+    </p>
+
+    <a id="cta-btn" href="#" class="cta" target="_blank" rel="noopener noreferrer"
+       aria-label="Download waitAround Clients on the App Store">
+      <svg width="16" height="19" viewBox="0 0 16 19" fill="currentColor" aria-hidden="true">
+        <path d="M13.44 10.18c-.02-2.18 1.79-3.23 1.87-3.29-1.02-1.48-2.6-1.69-3.16-1.71-1.33-.14-2.62.79-3.3.79-.69 0-1.73-.78-2.85-.75-1.6.02-2.91.88-3.59 2.08-1.37 2.37-.35 5.86.97 7.78.65.94 1.43 2 2.44 1.96.98-.04 1.35-.63 2.54-.63 1.18 0 1.52.63 2.55.61 1.05-.02 1.73-.95 2.37-1.9.75-1.08 1.05-2.13 1.07-2.19-.02-.01-2.05-.79-2.07-3.29-.02-2.06 1.68-3.05 1.76-3.1-.96-1.42-2.46-1.58-2.98-1.61-1.33-.13-2.62.78-3.3.78zm-1.93-6.05c.55-.66.91-1.58.81-2.49-.79.03-1.73.53-2.3 1.17-.5.58-.95 1.51-.83 2.4.88.07 1.77-.45 2.32-1.08z"/>
+      </svg>
+      Download waitAround Clients
+    </a>
+
+  </div>
+</main>
+
+<footer class="footer">
+  <p>
+    <a href="https://waitaroundllc.com/">waitAround LLC</a>
+    &nbsp;·&nbsp;
+    <a href="https://waitaroundllc.com/privacy-policy.html">Privacy Policy</a>
+  </p>
+</footer>
+
+<script>
+(function () {
+  // Wire up CTA
+  document.getElementById('cta-btn').href = WAITAROUND_CLIENTS_APP_STORE_URL;
+
+  // The valid state is the DEFAULT — HTML already shows correct copy.
+  // Only override to the invalid state when ?p= is explicitly present
+  // AND contains a value that is clearly not a valid barber slug.
+  // This way the page shows correctly whether opened:
+  //   - via 404 router (?p=/barber/dejesusbarber)  → valid
+  //   - directly in browser (/barber/dejesusbarber) → valid
+  //   - as a file:// preview                        → valid (no ?p= param)
+  //   - with a broken link (?p=/barber/)            → invalid
+
+  var params  = new URLSearchParams(window.location.search);
+  var pParam  = params.get('p');
+
+  if (pParam !== null && !/^\/barber\/[a-zA-Z0-9_-]+\/?$/.test(pParam)) {
+    // ?p= was provided but is not a valid /barber/<slug> — genuinely broken link
+    var card = document.getElementById('card');
+    card.classList.add('card--invalid');
+    card.querySelector('.headline').textContent  = 'Waiting Room link unavailable.';
+    card.querySelector('.body-copy').textContent =
+      'This link may be invalid or expired.';
+  }
+})();
+</script>
+</body>
+</html>
