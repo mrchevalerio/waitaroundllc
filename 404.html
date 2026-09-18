@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>waitAround</title>
+<meta name="robots" content="noindex, nofollow"/>
+<script>
+(function(){
+  var path = window.location.pathname;
+  if (/^\/barber\/[a-zA-Z0-9_-]+\/?$/.test(path)) {
+    window.location.replace('/barber.html?p=' + encodeURIComponent(path));
+  } else {
+    window.location.replace('/');
+  }
+})();
+</script>
+</head>
+<body></body>
+</html>
