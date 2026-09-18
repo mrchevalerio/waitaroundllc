@@ -1,0 +1,16 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "676Z5V9DU5.com.parse.waitAround2020"
+        ],
+        "components": [
+          {
+            "/": "/barber/*"
+          }
+        ]
+      }
+    ]
+  }
+}
