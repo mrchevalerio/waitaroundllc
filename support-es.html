@@ -70,6 +70,8 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
 .lang-btn{border:none;background:transparent;color:var(--ink-soft);font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:999px;cursor:pointer;transition:background var(--fast),color var(--fast);font-family:var(--ff-b);}
 .lang-btn.is-active{background:var(--ink);color:#fff;}
 .lang-btn:not(.is-active):hover{color:var(--ink);}
+.lang-btn-link{font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:7px 14px;border-radius:999px;border:1px solid var(--border-s);background:var(--surface);color:var(--ink-soft);transition:color var(--fast),border-color var(--fast);}
+.lang-btn-link:hover{color:var(--accent);border-color:var(--accent);}
 
 /* CARDS */
 .cards-section{padding:72px 0;}
@@ -129,10 +131,7 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
         <span class="nav__tagline">Human by Design</span>
       </span>
     </a>
-    <div class="lang-toggle" role="group" aria-label="Idioma">
-      <a href="/support" class="lang-btn" aria-label="Ver en inglés">EN</a>
-      <button type="button" class="lang-btn is-active" aria-current="true">ES</button>
-    </div>
+    <a href="/support" class="lang-btn-link" aria-label="View in English">EN</a>
     <a href="https://waitaroundllc.com/" class="nav__back">
       <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
         <path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
