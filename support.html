@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Support — waitAround LLC</title>
+<meta name="description" content="Get support for waitAround Clients or waitAround Providers. Reach us directly on WhatsApp."/>
+<meta name="robots" content="index, follow"/>
+<meta property="og:title" content="Support — waitAround LLC"/>
+<meta property="og:description" content="Get support for waitAround Clients or waitAround Providers."/>
+<meta property="og:type" content="website"/>
+<meta property="og:url" content="https://waitaroundllc.com/support"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+:root {
+  --ink:        #101B26;
+  --ink-soft:   #4B5A68;
+  --ink-faint:  #7C8A97;
+  --accent:     #2961A9;
+  --accent-dark:#1E4A80;
+  --accent-tint:#EAF2FA;
+  --accent-ts:  #D8E7F5;
+  --bg:         #FAF9F6;
+  --surface:    #FFFFFF;
+  --border:     #E4E3DC;
+  --border-s:   #D6D4CA;
+  --ff-d: 'Fraunces', Georgia, serif;
+  --ff-b: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --ease-out: cubic-bezier(0.16,1,0.3,1);
+  --fast: 180ms; --slow: 700ms;
+  --sh-sm: 0 1px 2px rgba(16,27,38,.06),0 1px 1px rgba(16,27,38,.04);
+  --sh-md: 0 8px 24px rgba(16,27,38,.08),0 2px 8px rgba(16,27,38,.05);
+}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.001ms!important;transition-duration:.001ms!important;}}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%;}
+body{min-height:100vh;display:flex;flex-direction:column;background:var(--bg);color:var(--ink);font-family:var(--ff-b);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;}
+img{max-width:100%;display:block;}
+a{color:var(--accent);text-decoration:none;transition:color var(--fast);}
+a:hover{color:var(--accent-dark);}
+p{margin:0 0 1rem;}
+h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:var(--ink);letter-spacing:-.02em;}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px;}
+.wrap{max-width:1100px;margin:0 auto;padding:0 24px;}
+
+/* NAV */
+.nav{position:sticky;top:0;z-index:100;background:rgba(250,249,246,.9);backdrop-filter:blur(16px) saturate(160%);-webkit-backdrop-filter:blur(16px) saturate(160%);border-bottom:1px solid var(--border);}
+.nav__in{display:flex;align-items:center;justify-content:space-between;height:60px;gap:16px;}
+.nav__brand{display:flex;align-items:center;gap:10px;text-decoration:none;margin-right:auto;}
+.brand-mark img{width:34px;height:auto;}
+.nav__brand-text{display:flex;flex-direction:column;line-height:1.2;}
+.nav__word{font-family:var(--ff-d);font-size:18px;font-weight:700;color:var(--ink);white-space:nowrap;}
+.nav__suffix{font-size:.65em;font-weight:600;color:var(--ink-faint);}
+.nav__tagline{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--ink-faint);}
+.nav__back{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:600;color:var(--ink-soft);padding:8px 16px;border-radius:999px;border:1px solid var(--border-s);transition:color var(--fast),border-color var(--fast),transform var(--fast);}
+.nav__back:hover{color:var(--accent-dark);border-color:var(--accent);transform:translateY(-1px);}
+.nav__back svg{transition:transform var(--fast);}
+.nav__back:hover svg{transform:translateX(-2px);}
+
+/* HERO */
+.hero{padding:80px 0 64px;border-bottom:1px solid var(--border);}
+.eyebrow{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:14px;}
+.hero h1{font-size:clamp(36px,5vw,56px);margin-bottom:16px;letter-spacing:-.03em;}
+.hero__sub{font-size:clamp(16px,2vw,18px);color:var(--ink-soft);line-height:1.65;max-width:480px;margin:0;}
+
+/* CARDS */
+.cards-section{padding:72px 0;}
+.cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.support-card{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;flex-direction:column;gap:20px;transition:border-color var(--fast),box-shadow var(--fast);}
+.support-card:hover{border-color:var(--accent-ts);box-shadow:var(--sh-md);}
+.support-card__icon{width:48px;height:48px;border-radius:14px;background:var(--accent-tint);border:1px solid var(--accent-ts);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;}
+.support-card__label{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent-dark);margin-bottom:6px;}
+.support-card h2{font-size:22px;margin-bottom:8px;}
+.support-card p{font-size:15px;color:var(--ink-soft);line-height:1.65;margin:0;flex:1;}
+.wa-btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;background:var(--ink);color:#fff;font-family:var(--ff-b);font-size:15px;font-weight:600;text-decoration:none;transition:background var(--fast),transform var(--fast);box-shadow:var(--sh-sm);margin-top:auto;}
+.wa-btn:hover{background:#25D366;color:#fff;transform:translateY(-2px);box-shadow:var(--sh-md);}
+.wa-btn svg{flex-shrink:0;}
+
+/* RESPONSE TIME */
+.response{padding:0 0 72px;}
+.response__inner{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:36px;display:flex;align-items:center;gap:24px;}
+.response__icon{width:48px;height:48px;border-radius:14px;background:var(--accent-tint);border:1px solid var(--accent-ts);display:flex;align-items:center;justify-content:center;color:var(--accent);flex-shrink:0;}
+.response__text h3{font-size:18px;margin-bottom:6px;}
+.response__text p{font-size:15px;color:var(--ink-soft);line-height:1.6;margin:0;}
+
+/* REVEAL */
+[data-r]{opacity:0;transform:translateY(20px);transition:opacity var(--slow) var(--ease-out),transform var(--slow) var(--ease-out);transition-delay:calc(var(--d,0)*1ms);}
+[data-r].on{opacity:1;transform:none;}
+
+/* FOOTER */
+.footer{padding:64px 0 32px;background:var(--bg);border-top:1px solid var(--border);text-align:center;margin-top:auto;}
+.footer__inner{display:flex;flex-direction:column;align-items:center;}
+.footer__mark{width:26px;height:auto;opacity:.8;margin-bottom:16px;}
+.footer__badge-label{font-size:12.5px;color:var(--ink-faint);margin-bottom:2px;}
+.footer__badge-name{font-family:var(--ff-d);font-weight:700;font-size:18px;color:var(--accent);transition:color var(--fast);}
+.footer__badge-name:hover{color:var(--accent-dark);}
+.footer__badge-slogan{font-size:13px;font-weight:600;color:var(--ink-faint);margin-top:4px;margin-bottom:32px;font-style:italic;}
+.footer__legal{font-size:12.5px;color:var(--ink-faint);padding-top:24px;border-top:1px solid var(--border);width:100%;max-width:260px;}
+
+/* LANG TOGGLE */
+.lang-toggle{display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--border-s);border-radius:999px;padding:3px;gap:2px;}
+.lang-btn{border:none;background:transparent;color:var(--ink-soft);font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:999px;cursor:pointer;transition:background var(--fast),color var(--fast);font-family:var(--ff-b);text-decoration:none;}
+.lang-btn.is-active{background:var(--ink);color:#fff;}
+.lang-btn:not(.is-active):hover{color:var(--ink);}
+
+/* RESPONSIVE */
+@media(max-width:680px){
+  .cards-grid{grid-template-columns:1fr;}
+  .response__inner{flex-direction:column;align-items:flex-start;}
+}
+@media(max-width:540px){
+  .wrap{padding:0 16px;}
+  .hero{padding:56px 0 48px;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__in wrap">
+    <a href="https://waitaroundllc.com/" class="nav__brand" aria-label="waitAround LLC home">
+      <span class="brand-mark" aria-hidden="true">
+        <img src="assets/waitaround-logo.png" alt="" width="34" onerror="this.style.display='none'">
+      </span>
+      <span class="nav__brand-text">
+        <span class="nav__word">waitAround<span class="nav__suffix">&nbsp;LLC</span></span>
+        <span class="nav__tagline">Human by Design</span>
+      </span>
+    </a>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-active" aria-current="true">EN</button>
+      <a href="/support-es" class="lang-btn" aria-label="Ver en español">ES</a>
+    </div>
+    <a href="https://waitaroundllc.com/" class="nav__back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+        <path d="M19 12H5M12 5l-7 7 7 7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      Return home
+    </a>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow" data-r>Support</p>
+      <h1 data-r style="--d:60">We&rsquo;re here to help.</h1>
+      <p class="hero__sub" data-r style="--d:120">Reach us directly on WhatsApp. We usually reply within one business day.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT CARDS -->
+  <section class="cards-section">
+    <div class="wrap">
+      <div class="cards-grid">
+
+        <!-- Clients -->
+        <div class="support-card" data-r style="--d:0">
+          <div class="support-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/>
+            </svg>
+          </div>
+          <div>
+            <p class="support-card__label">waitAround Clients</p>
+            <h2>Support for clients</h2>
+          </div>
+          <p>Having trouble joining your barber&rsquo;s line, scanning a QR code, or receiving notifications? We&rsquo;ll help you get sorted.</p>
+          <a href="https://wa.me/18564484646?text=Hi%20waitAround%20LLC%2C%20I%20need%20help%20with%20waitAround%20Clients." target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Contact support for waitAround Clients on WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.26-8.24Zm-3.1 4.15c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.18 3.64.58.25 1.04.4 1.39.51.59.19 1.12.16 1.54.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42Z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+        <!-- Providers -->
+        <div class="support-card" data-r style="--d:100">
+          <div class="support-card__icon" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="9" cy="7" r="4" stroke="currentColor" stroke-width="1.6"/>
+              <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div>
+            <p class="support-card__label">waitAround Providers</p>
+            <h2>Support for barbers</h2>
+          </div>
+          <p>Need help setting up your waiting room, sharing your QR code, or managing your line? Get in touch and we&rsquo;ll walk you through it.</p>
+          <a href="https://wa.me/18564484646?text=Hi%20waitAround%20LLC%2C%20I%20need%20help%20with%20waitAround%20Providers." target="_blank" rel="noopener noreferrer" class="wa-btn" aria-label="Contact support for waitAround Providers on WhatsApp">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2 22l5.29-1.39a9.9 9.9 0 0 0 4.75 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.85 9.85 0 0 0 12.04 2Zm0 1.67c2.2 0 4.27.86 5.82 2.42a8.2 8.2 0 0 1 2.42 5.82c0 4.54-3.7 8.24-8.25 8.24a8.2 8.2 0 0 1-4.19-1.15l-.3-.18-3.14.82.84-3.06-.2-.31a8.18 8.18 0 0 1-1.26-4.38c0-4.55 3.7-8.24 8.26-8.24Zm-3.1 4.15c-.16 0-.42.06-.64.3-.22.24-.85.83-.85 2.03s.87 2.36.99 2.52c.12.16 1.7 2.6 4.18 3.64.58.25 1.04.4 1.39.51.59.19 1.12.16 1.54.1.47-.07 1.44-.59 1.64-1.16.2-.57.2-1.06.14-1.16-.06-.1-.22-.16-.46-.28-.24-.12-1.44-.71-1.66-.79-.22-.08-.38-.12-.55.12-.16.24-.63.79-.77.95-.14.16-.28.18-.52.06-.24-.12-1.02-.38-1.94-1.2-.72-.64-1.2-1.43-1.34-1.67-.14-.24-.02-.37.1-.49.11-.11.24-.28.36-.42.12-.14.16-.24.24-.4.08-.16.04-.3-.02-.42-.06-.12-.55-1.35-.76-1.84-.2-.48-.4-.42-.55-.42Z"/></svg>
+            Chat on WhatsApp
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- RESPONSE TIME -->
+  <section class="response">
+    <div class="wrap">
+      <div class="response__inner" data-r>
+        <div class="response__icon" aria-hidden="true">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
+            <circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="1.6"/>
+            <path d="M12 6v6l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="response__text">
+          <h3>Response time</h3>
+          <p>We usually reply within one business day. For the fastest response, let us know in your message whether you&rsquo;re a client or a barber and what you&rsquo;re experiencing.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <img class="footer__mark" src="assets/waitaround-logo.png" alt="" width="26" height="17" onerror="this.style.display='none'">
+    <p class="footer__badge-label">Powered by</p>
+    <a href="https://waitaroundllc.com/" class="footer__badge-name">waitAround LLC</a>
+    <p class="footer__badge-slogan">Human by Design</p>
+    <p class="footer__legal">&copy; <span id="yr"></span> waitAround LLC. Human by Design.</p>
+  </div>
+</footer>
+
+<script>
+document.getElementById('yr').textContent = new Date().getFullYear();
+var io = new IntersectionObserver(function(es) {
+  es.forEach(function(e) { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('[data-r]').forEach(function(el) { io.observe(el); });
+</script>
+</body>
+</html>
