@@ -60,6 +60,10 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
 .nav__word-suffix{font-size:.65em;font-weight:600;color:var(--ink-faint);letter-spacing:.01em;}
 .nav__tagline{font-size:11px;font-weight:600;letter-spacing:.02em;color:var(--ink-faint);margin-top:0;}
 .nav__pill{font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-dark);padding:4px 10px;border-radius:999px;background:var(--accent-tint);border:1px solid var(--accent-ts);}
+.lang-toggle{display:inline-flex;align-items:center;background:var(--surface);border:1px solid var(--border-s);border-radius:999px;padding:3px;gap:2px;}
+.lang-btn{border:none;background:transparent;color:var(--ink-soft);font-size:12.5px;font-weight:700;letter-spacing:.03em;padding:6px 12px;border-radius:999px;cursor:pointer;transition:background var(--fast),color var(--fast);font-family:var(--ff-b);text-decoration:none;display:inline-block;}
+.lang-btn.is-active{background:var(--ink);color:#fff;}
+.lang-btn:not(.is-active):hover{color:var(--ink);}
 .nav__cta{display:inline-flex;align-items:center;gap:6px;padding:9px 18px;border-radius:999px;background:var(--ink);color:#fff;font-size:13.5px;font-weight:600;text-decoration:none;transition:background var(--fast),transform var(--fast);white-space:nowrap;}
 .nav__cta:hover{background:var(--accent);color:#fff;transform:translateY(-1px);}
 
@@ -71,12 +75,10 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
 .hero h1 em{font-style:italic;color:var(--accent);font-weight:400;}
 .hero__sub{font-size:clamp(16px,2vw,18px);color:var(--ink-soft);line-height:1.65;margin-bottom:32px;max-width:460px;}
 .hero__acts{display:flex;flex-direction:column;gap:12px;align-items:flex-start;}
-.appstore-btn{display:inline-flex;align-items:center;gap:12px;padding:14px 24px;border-radius:14px;background:var(--ink);color:#fff;text-decoration:none;box-shadow:var(--sh-md);transition:background var(--fast),transform var(--fast);}
-.appstore-btn:hover{background:var(--accent);color:#fff;transform:translateY(-2px);}
-.appstore-btn svg{flex-shrink:0;}
-.appstore-btn__text{display:flex;flex-direction:column;line-height:1.1;}
-.appstore-btn__small{font-size:10px;font-weight:400;opacity:.7;letter-spacing:.02em;}
-.appstore-btn__big{font-size:19px;font-weight:700;letter-spacing:-.01em;}
+/* BADGE */
+.badge-link{display:inline-block;transition:opacity var(--fast),transform var(--fast);}
+.badge-link:hover{opacity:.85;transform:translateY(-2px);}
+.badge-link img{display:block;height:52px;width:auto;}
 .hero__scroll{display:inline-flex;align-items:center;gap:6px;font-size:14px;font-weight:500;color:var(--ink-soft);text-decoration:none;padding:4px 0;transition:color var(--fast);}
 .hero__scroll:hover{color:var(--accent);}
 .hero__scroll svg{transition:transform var(--fast);}
@@ -123,9 +125,7 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
 .final::before{content:'';position:absolute;top:-150px;right:-150px;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(41,97,169,.18),transparent 70%);pointer-events:none;}
 .final h2{font-size:clamp(26px,5vw,46px);color:#fff;margin-bottom:12px;}
 .final p{font-size:16px;color:rgba(255,255,255,.5);margin-bottom:36px;max-width:420px;margin-left:auto;margin-right:auto;}
-.final .appstore-btn{background:#fff;color:var(--ink);margin:0 auto;}
-.final .appstore-btn .appstore-btn__small{color:var(--ink-soft);opacity:1;}
-.final .appstore-btn:hover{background:var(--accent-tint);color:var(--accent-dark);}
+.final .badge-link{margin:0 auto;}
 
 
 /* FOOTER — exact match to main site */
@@ -206,6 +206,10 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
       </span>
     </a>
     <span class="nav__pill">Clients</span>
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button type="button" class="lang-btn is-active" aria-current="true">EN</button>
+      <a href="/clients-es" class="lang-btn" aria-label="Ver en español">ES</a>
+    </div>
     <a href="#download" class="nav__cta">Download on the App Store</a>
   </div>
 </header>
@@ -219,13 +223,7 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
         <h1 data-r style="--d:60">Get in line before<br>you <em>head out.</em></h1>
         <p class="hero__sub" data-r style="--d:140">Scan your barber's QR code on your first visit. Next time, join the same-day line from wherever you are and see how many clients are ahead.</p>
         <div class="hero__acts" data-r style="--d:220">
-          <a href="https://apps.apple.com/us/app/waitaround-clients/id1505349002" target="_blank" rel="noopener noreferrer" id="download" class="appstore-btn" aria-label="Download waitAround Clients on the App Store">
-            <svg width="22" height="26" viewBox="0 0 24 28" fill="white" aria-hidden="true"><path d="M17.05 14.68c-.03-3.27 2.68-4.85 2.8-4.93-1.53-2.23-3.9-2.54-4.74-2.57-2-.2-3.93 1.19-4.95 1.19-1.03 0-2.6-1.17-4.28-1.13C3.6 7.28 1.64 8.4.62 10.18c-2.05 3.56-.52 8.8 1.46 11.68.98 1.41 2.14 3 3.66 2.94 1.47-.06 2.03-.95 3.81-.95 1.77 0 2.28.95 3.83.92 1.58-.03 2.59-1.43 3.56-2.85 1.12-1.63 1.58-3.21 1.61-3.3-.04-.01-3.08-1.18-3.1-4.94zm-2.9-9.08c.82-.99 1.37-2.37 1.22-3.74-1.18.05-2.6.79-3.45 1.76-.76.87-1.42 2.26-1.24 3.6 1.32.1 2.66-.67 3.47-1.62z"/></svg>
-            <span class="appstore-btn__text">
-              <span class="appstore-btn__small">Download on the</span>
-              <span class="appstore-btn__big">App Store</span>
-            </span>
-          </a>
+          <a href="https://apps.apple.com/us/app/waitaround-clients/id1505349002" id="download" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Download on the App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="52" style="display:block;"/></a>
           <a href="#how" class="hero__scroll" aria-label="See how it works">
             See how it works
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -318,13 +316,7 @@ h1,h2,h3{font-family:var(--ff-d);font-weight:500;line-height:1.1;margin:0;color:
       <h2 data-r style="--d:60">Spend less of your day<br>sitting in the shop.</h2>
       <p data-r style="--d:120">Connect with your barber and follow your place in the same-day line.</p>
       <div data-r style="--d:180">
-        <a href="https://apps.apple.com/us/app/waitaround-clients/id1505349002" target="_blank" rel="noopener noreferrer" class="appstore-btn" aria-label="Download waitAround Clients on the App Store">
-          <svg width="22" height="26" viewBox="0 0 24 28" fill="currentColor" aria-hidden="true"><path d="M17.05 14.68c-.03-3.27 2.68-4.85 2.8-4.93-1.53-2.23-3.9-2.54-4.74-2.57-2-.2-3.93 1.19-4.95 1.19-1.03 0-2.6-1.17-4.28-1.13C3.6 7.28 1.64 8.4.62 10.18c-2.05 3.56-.52 8.8 1.46 11.68.98 1.41 2.14 3 3.66 2.94 1.47-.06 2.03-.95 3.81-.95 1.77 0 2.28.95 3.83.92 1.58-.03 2.59-1.43 3.56-2.85 1.12-1.63 1.58-3.21 1.61-3.3-.04-.01-3.08-1.18-3.1-4.94zm-2.9-9.08c.82-.99 1.37-2.37 1.22-3.74-1.18.05-2.6.79-3.45 1.76-.76.87-1.42 2.26-1.24 3.6 1.32.1 2.66-.67 3.47-1.62z"/></svg>
-          <span class="appstore-btn__text">
-            <span class="appstore-btn__small">Download on the</span>
-            <span class="appstore-btn__big">App Store</span>
-          </span>
-        </a>
+        <a href="https://apps.apple.com/us/app/waitaround-clients/id1505349002" target="_blank" rel="noopener noreferrer" class="badge-link" aria-label="Download on the App Store"><img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg" alt="Download on the App Store" height="52" style="display:block;"/></a>
       </div>
     </div>
   </section>
