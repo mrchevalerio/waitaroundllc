@@ -68,17 +68,11 @@ a:hover { color: #1E4A80; }
 .body-copy { font-size: 15px; color: #4B5A68; line-height: 1.7; margin-bottom: 36px; }
 
 /* CTA — store badges */
-.badge-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 12px; }
-.badge-link {
-  display: inline-flex; align-items: center; justify-content: center;
-  height: 52px; overflow: hidden;
-  transition: opacity 180ms, transform 180ms;
-}
+.badge-row { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.badge-link { display: block; transition: opacity 180ms, transform 180ms; }
 .badge-link:hover { opacity: .85; transform: translateY(-2px); }
-.badge-link--apple img { height: 52px; width: auto; display: block; }
-/* Google Play PNG has ~20% padding baked in; scale up so artwork = 52px tall */
-.badge-link--gplay { height: 52px; }
-.badge-link--gplay img { height: 78px; width: auto; display: block; }
+.badge-link--apple img { width: 200px; height: auto; display: block; }
+.badge-link--gplay img { width: 258px; height: auto; display: block; margin: -19px 0; }
 
 /* Invalid */
 .card--invalid .headline { font-size: clamp(22px, 5vw, 28px); }
