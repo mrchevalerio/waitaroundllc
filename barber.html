@@ -7,10 +7,12 @@
 <meta name="description" content="Download waitAround Clients and join your barber's same-day waiting line."/>
 <meta name="robots" content="noindex, nofollow"/>
 
-<!-- App Store URL — single source of truth for this page -->
+<!-- Store URLs — single source of truth for this page -->
 <script>
   var WAITAROUND_CLIENTS_APP_STORE_URL =
     'https://apps.apple.com/us/app/waitaround-clients/id1505349002';
+  var WAITAROUND_CLIENTS_GOOGLE_PLAY_URL =
+    'https://play.google.com/store/apps/details?id=com.waitaroundllc.clients';
 </script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
@@ -67,16 +69,56 @@ a:hover { color: #1E4A80; }
 .headline { font-family: 'Fraunces', Georgia, serif; font-size: clamp(26px, 6vw, 34px); font-weight: 500; letter-spacing: -0.03em; line-height: 1.15; color: #101B26; margin-bottom: 16px; }
 .body-copy { font-size: 15px; color: #4B5A68; line-height: 1.7; margin-bottom: 36px; }
 
-/* CTA — replaced by official App Store badge */
+/* CTA — store badges */
+.badge-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.badge-link { display: inline-block; transition: opacity 180ms, transform 180ms; }
+.badge-link:hover { opacity: .85; transform: translateY(-2px); }
+.badge-link img { display: block; height: 52px; width: auto; }
 
 /* Invalid */
 .card--invalid .headline { font-size: clamp(22px, 5vw, 28px); }
 
+/* LANG TOGGLE */
+.lang-toggle {
+  display: inline-flex; align-items: center;
+  background: #fff; border: 1px solid #D6D4CA;
+  border-radius: 999px; padding: 3px; gap: 2px;
+  margin-left: auto;
+}
+.lang-btn {
+  border: none; background: transparent; color: #4B5A68;
+  font-size: 12.5px; font-weight: 700; letter-spacing: .03em;
+  padding: 6px 12px; border-radius: 999px; cursor: pointer;
+  transition: background 180ms, color 180ms;
+  font-family: 'Inter', -apple-system, sans-serif;
+  text-decoration: none; display: inline-block;
+}
+.lang-btn.is-active { background: #101B26; color: #fff; }
+.lang-btn:not(.is-active):hover { color: #101B26; }
+
 /* FOOTER */
-.footer { padding: 24px; border-top: 1px solid #E4E3DC; text-align: center; background: #FAF9F6; }
-.footer p { font-size: 12px; color: #7C8A97; }
-.footer a { color: #7C8A97; font-weight: 500; }
-.footer a:hover { color: #2961A9; }
+.footer {
+  padding: 48px 24px 28px;
+  border-top: 1px solid #E4E3DC;
+  text-align: center;
+  background: #FAF9F6;
+}
+.footer__inner { display: flex; flex-direction: column; align-items: center; }
+.footer__mark { width: 26px; height: auto; opacity: 0.8; margin-bottom: 16px; }
+.footer__badge-label { font-size: 12.5px; color: #7C8A97; margin-bottom: 2px; }
+.footer__badge-name {
+  font-family: 'Fraunces', Georgia, serif; font-weight: 700;
+  font-size: 18px; color: #2961A9;
+  text-decoration: none; transition: color 180ms;
+}
+.footer__badge-name:hover { color: #1E4A80; }
+.footer__badge-slogan { font-size: 13px; font-weight: 600; color: #7C8A97; margin-top: 4px; margin-bottom: 28px; }
+.footer__legal {
+  font-size: 12.5px; color: #7C8A97;
+  padding-top: 20px;
+  border-top: 1px solid #E4E3DC;
+  width: 100%; max-width: 280px;
+}
 </style>
 </head>
 <body>
@@ -89,6 +131,10 @@ a:hover { color: #1E4A80; }
       <span class="nav__tagline">Human by Design</span>
     </span>
   </a>
+  <div class="lang-toggle" role="group" aria-label="Language">
+    <button type="button" class="lang-btn is-active" aria-current="true">EN</button>
+    <a id="lang-es-btn" href="#" class="lang-btn" aria-label="Ver en español">ES</a>
+  </div>
 </header>
 
 <main class="main" id="main">
@@ -105,33 +151,54 @@ a:hover { color: #1E4A80; }
     <p class="label">waitAround</p>
     <h1 class="headline">Join your barber's line</h1>
     <p class="body-copy">
-      Download waitAround Clients, then come back and tap your barber&#8217;s link again.
+      Your barber is inviting you to get in line remotely. No more calls or texts &#8212; just get in line whenever you want, from wherever you are.
     </p>
 
-    <a id="cta-btn" href="#" target="_blank" rel="noopener noreferrer"
-       aria-label="Download on the App Store"
-       style="display:inline-block;transition:opacity .18s,transform .18s;"
-       onmouseover="this.style.opacity='.85';this.style.transform='translateY(-2px)'"
-       onmouseout="this.style.opacity='1';this.style.transform='none'">
-      <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
-           alt="Download on the App Store" height="52" style="display:block;"/>
-    </a>
+    <div class="badge-row">
+      <a id="cta-btn" href="#" target="_blank" rel="noopener noreferrer"
+         class="badge-link" aria-label="Download on the App Store">
+        <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+             alt="Download on the App Store" height="52"/>
+      </a>
+      <a id="gplay-btn" href="#" target="_blank" rel="noopener noreferrer"
+         class="badge-link" aria-label="Get it on Google Play">
+        <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+             alt="Get it on Google Play" height="52"/>
+      </a>
+    </div>
 
   </div>
 </main>
 
 <footer class="footer">
-  <p>
-    <a href="https://waitaroundllc.com/">waitAround LLC</a>
-    &nbsp;·&nbsp;
-    <a href="https://waitaroundllc.com/privacy-policy.html">Privacy Policy</a>
-  </p>
+  <div class="footer__inner">
+    <img class="footer__mark" src="/assets/waitaround-logo.png" alt="" width="26"
+      onerror="this.style.display='none'">
+    <p class="footer__badge-label">Powered by</p>
+    <a href="https://waitaroundllc.com/" class="footer__badge-name">waitAround LLC</a>
+    <p class="footer__badge-slogan">Human by Design</p>
+    <p class="footer__legal">
+      &copy; <span id="yr"></span> waitAround LLC.
+      &nbsp;·&nbsp;
+      <a href="https://waitaroundllc.com/privacy-policy.html" style="color:#7C8A97;font-weight:500;">Privacy Policy</a>
+    </p>
+  </div>
 </footer>
 
 <script>
 (function () {
-  // Wire up CTA
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+
+  // Wire up CTAs
   document.getElementById('cta-btn').href = WAITAROUND_CLIENTS_APP_STORE_URL;
+  document.getElementById('gplay-btn').href = WAITAROUND_CLIENTS_GOOGLE_PLAY_URL;
+
+  // Spanish toggle — preserve ?p= slug so the barber-es page works the same way
+  var esBtn = document.getElementById('lang-es-btn');
+  var esBase = '/barber-es';
+  var pParam = new URLSearchParams(window.location.search).get('p');
+  esBtn.href = pParam ? esBase + '?p=' + encodeURIComponent(pParam) : esBase;
 
   // The valid state is the DEFAULT — HTML already shows correct copy.
   // Only override to the invalid state when ?p= is explicitly present
@@ -141,9 +208,6 @@ a:hover { color: #1E4A80; }
   //   - directly in browser (/barber/dejesusbarber) → valid
   //   - as a file:// preview                        → valid (no ?p= param)
   //   - with a broken link (?p=/barber/)            → invalid
-
-  var params  = new URLSearchParams(window.location.search);
-  var pParam  = params.get('p');
 
   if (pParam !== null && !/^\/barber\/[a-zA-Z0-9_-]+\/?$/.test(pParam)) {
     // ?p= was provided but is not a valid /barber/<slug> — genuinely broken link
