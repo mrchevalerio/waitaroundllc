@@ -96,27 +96,22 @@ a:hover { color: #1E4A80; }
 
 /* FOOTER */
 .footer {
-  padding: 48px 24px 28px;
+  padding: 20px 24px;
   border-top: 1px solid #E4E3DC;
-  text-align: center;
   background: #FAF9F6;
 }
-.footer__inner { display: flex; flex-direction: column; align-items: center; }
-.footer__mark { width: 26px; height: auto; opacity: 0.8; margin-bottom: 16px; }
-.footer__badge-label { font-size: 12.5px; color: #7C8A97; margin-bottom: 2px; }
-.footer__badge-name {
-  font-family: 'Fraunces', Georgia, serif; font-weight: 700;
-  font-size: 18px; color: #2961A9;
-  text-decoration: none; transition: color 180ms;
+.footer__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  max-width: 600px;
+  margin: 0 auto;
 }
-.footer__badge-name:hover { color: #1E4A80; }
-.footer__badge-slogan { font-size: 13px; font-weight: 600; color: #7C8A97; margin-top: 4px; margin-bottom: 28px; }
-.footer__legal {
-  font-size: 12.5px; color: #7C8A97;
-  padding-top: 20px;
-  border-top: 1px solid #E4E3DC;
-  width: 100%; max-width: 280px;
-}
+.footer__legal { font-size: 12.5px; color: #7C8A97; }
+.footer__legal a { color: #7C8A97; font-weight: 500; }
+.footer__legal a:hover { color: #2961A9; }
 </style>
 </head>
 <body>
@@ -129,10 +124,6 @@ a:hover { color: #1E4A80; }
       <span class="nav__tagline">Human by Design</span>
     </span>
   </a>
-  <div class="lang-toggle" role="group" aria-label="Idioma">
-    <a id="lang-en-btn" href="#" class="lang-btn" aria-label="View in English">EN</a>
-    <button type="button" class="lang-btn is-active" aria-current="true">ES</button>
-  </div>
 </header>
 
 <main class="main" id="main">
@@ -170,16 +161,15 @@ a:hover { color: #1E4A80; }
 
 <footer class="footer">
   <div class="footer__inner">
-    <img class="footer__mark" src="/assets/waitaround-logo.png" alt="" width="26"
-      onerror="this.style.display='none'">
-    <p class="footer__badge-label">Desarrollado por</p>
-    <a href="https://waitaroundllc.com/" class="footer__badge-name">waitAround LLC</a>
-    <p class="footer__badge-slogan">Human by Design</p>
     <p class="footer__legal">
-      &copy; <span id="yr"></span> waitAround LLC.
+      &copy; <span id="yr"></span> waitAround LLC
       &nbsp;·&nbsp;
-      <a href="https://waitaroundllc.com/privacy-policy.html" style="color:#7C8A97;font-weight:500;">Política de privacidad</a>
+      <a href="https://waitaroundllc.com/privacy-policy.html">Política de privacidad</a>
     </p>
+    <div class="lang-toggle" role="group" aria-label="Idioma">
+      <a id="lang-en-btn" href="#" class="lang-btn" aria-label="View in English">EN</a>
+      <button type="button" class="lang-btn is-active" aria-current="true">ES</button>
+    </div>
   </div>
 </footer>
 
