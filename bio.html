@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Book or contact waitAround LLC for simple website-based booking experiences.">
   <meta name="referrer" content="no-referrer">
-  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; form-action 'none'; navigate-to 'self' https://wa.me https://api.whatsapp.com;">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; base-uri 'self'; object-src 'none'; frame-ancestors 'none'; img-src 'self' data: https://developer.apple.com https://play.google.com; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'none'; form-action 'none'; navigate-to 'self' https://wa.me https://api.whatsapp.com https://apps.apple.com https://play.google.com;">
   <title>waitAround LLC | Let's Chat</title>
   <link rel="icon" type="image/png" href="/assets/waitaround-logo.png">
   <link rel="apple-touch-icon" href="/assets/waitaround-logo.png">
@@ -23,7 +23,6 @@
     }
 
     * { box-sizing: border-box; }
-
     html { min-height: 100%; }
 
     body {
@@ -96,9 +95,7 @@
       background: var(--brand);
     }
 
-    .profile {
-      text-align: center;
-    }
+    .profile { text-align: center; }
 
     .logo-wrap {
       display: grid;
@@ -123,7 +120,6 @@
       font-size: clamp(30px, 9vw, 42px);
       font-weight: 700;
       line-height: 1.02;
-      letter-spacing: 0;
     }
 
     .tagline {
@@ -199,6 +195,56 @@
 
     .text-link:hover { color: var(--brand-dark); }
 
+    /* Products */
+    .products-label {
+      margin: 32px 0 12px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .products { display: grid; gap: 10px; }
+
+    .product-card {
+      padding: 16px 18px;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.56);
+    }
+
+    .product-card__name {
+      margin: 0 0 4px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 1.2;
+    }
+
+    .product-card__desc {
+      margin: 0 0 12px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .product-card__badges {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .product-badge {
+      display: block;
+      transition: opacity 160ms, transform 160ms;
+    }
+
+    .product-badge:hover { opacity: .82; transform: translateY(-2px); }
+    .product-badge img { display: block; width: 120px; height: auto; }
+
+    /* Floating button */
     .floating-book {
       position: fixed;
       right: max(18px, env(safe-area-inset-right));
@@ -247,7 +293,6 @@
       margin: 0;
       font-size: 26px;
       line-height: 1.08;
-      letter-spacing: 0;
     }
 
     .modal-head p {
@@ -270,15 +315,9 @@
       cursor: pointer;
     }
 
-    .booking-form {
-      display: grid;
-      gap: 16px;
-    }
+    .booking-form { display: grid; gap: 16px; }
 
-    .field {
-      display: grid;
-      gap: 8px;
-    }
+    .field { display: grid; gap: 8px; }
 
     .field label {
       color: var(--ink);
@@ -309,21 +348,13 @@
       .page { padding: 24px 12px 96px; }
       .bio { border-radius: 22px; }
       .button { font-size: 15px; }
-      .floating-book {
-        right: 12px;
-        bottom: 12px;
-        min-height: 52px;
-        padding-inline: 18px;
-      }
+      .floating-book { right: 12px; bottom: 12px; min-height: 52px; padding-inline: 18px; }
       .modal { padding: 10px; }
       .modal-panel { padding: 22px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        transition-duration: .01ms !important;
-      }
+      *, *::before, *::after { scroll-behavior: auto !important; transition-duration: .01ms !important; }
     }
   </style>
 </head>
@@ -342,6 +373,47 @@
         <h1 id="company-name">waitAround LLC</h1>
         <p class="tagline" data-i18n="tagline">Human by design</p>
         <p class="description" data-i18n="description">Simple digital booking experiences for service businesses, built to help clients book faster and keep conversations moving.</p>
+      </div>
+
+      <!-- Product showcase -->
+      <p class="products-label" data-i18n="ourApps">Our Latest Products</p>
+      <div class="products">
+
+        <div class="product-card">
+          <p class="product-card__name" data-i18n="providersName">waitAround Providers</p>
+          <p class="product-card__desc" data-i18n="providersDesc">Manage your line, set capacity, and keep clients moving — all from your phone.</p>
+          <div class="product-card__badges">
+            <a class="product-badge"
+               href="https://apps.apple.com/us/app/waitaround-providers/id1548701975"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Download waitAround Providers on the App Store">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                   alt="Download on the App Store">
+            </a>
+          </div>
+        </div>
+
+        <div class="product-card">
+          <p class="product-card__name" data-i18n="clientsName">waitAround Clients</p>
+          <p class="product-card__desc" data-i18n="clientsDesc">Join your barber's line remotely. No calls, no waiting outside — get in line from anywhere.</p>
+          <div class="product-card__badges">
+            <a class="product-badge"
+               href="https://apps.apple.com/us/app/waitaround-clients/id1505349002"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Download waitAround Clients on the App Store">
+              <img src="https://developer.apple.com/assets/elements/badges/download-on-the-app-store.svg"
+                   alt="Download on the App Store">
+            </a>
+            <a class="product-badge product-badge--gplay"
+               href="https://play.google.com/store/apps/details?id=com.waitaroundllc.clients"
+               target="_blank" rel="noopener noreferrer"
+               aria-label="Get waitAround Clients on Google Play">
+              <img src="https://play.google.com/intl/en_us/badges/static/images/badges/en_badge_web_generic.png"
+                   alt="Get it on Google Play">
+            </a>
+          </div>
+        </div>
+
       </div>
 
       <p class="small-note" data-i18n="note">No complicated forms. Start with one message.</p>
@@ -413,8 +485,9 @@
     const businessType = document.querySelector('#businessType');
     const bookingNeed = document.querySelector('#bookingNeed');
     const bookingPlatform = document.querySelector('#bookingPlatform');
+    const gplayBadge = document.querySelector('.product-badge--gplay img');
     const whatsappNumber = '18564484646';
-    const bookingBase = `https://wa.me/${whatsappNumber}?text=`;
+    const bookingBase = 'https://wa.me/' + whatsappNumber + '?text=';
     let currentLanguage = 'en';
 
     const translations = {
@@ -427,6 +500,11 @@
         bookNow: "Let's Chat",
         fullWebsite: 'Full Website',
         note: 'No complicated forms. Start with one message.',
+        ourApps: 'Our Latest Products',
+        providersName: 'waitAround Providers',
+        providersDesc: 'Manage your line, set capacity, and keep clients moving — all from your phone.',
+        clientsName: 'waitAround Clients',
+        clientsDesc: "Join your barber's line remotely. No calls, no waiting outside — get in line from anywhere.",
         formTitle: 'Start Conversation',
         formIntro: 'Answer three quick questions and we will continue on WhatsApp.',
         closeForm: 'Close booking form',
@@ -466,6 +544,11 @@
         bookNow: 'Hablemos',
         fullWebsite: 'Sitio Completo',
         note: 'Sin formularios complicados. Empieza con un mensaje.',
+        ourApps: 'Nuestros Últimos Productos',
+        providersName: 'waitAround Providers',
+        providersDesc: 'Administra tu fila, ajusta capacidad y manten a los clientes fluyendo — todo desde tu telefono.',
+        clientsName: 'waitAround Clients',
+        clientsDesc: 'Unete a la fila de tu barbero desde donde estes. Sin llamadas ni esperas afuera.',
         formTitle: 'Empiezar Conversacion',
         formIntro: 'Responde tres preguntas rapidas y seguimos por WhatsApp.',
         closeForm: 'Cerrar formulario de reserva',
@@ -499,7 +582,7 @@
     };
 
     function setLanguage(language) {
-      const copy = translations[language] || translations.en;
+      var copy = translations[language] || translations.en;
       currentLanguage = language;
       document.documentElement.lang = language;
       document.title = copy.title;
@@ -507,18 +590,25 @@
       languageSwitcher.setAttribute('aria-label', copy.languageLabel);
       bookingCloseButton.setAttribute('aria-label', copy.closeForm);
 
-      document.querySelectorAll('[data-i18n]').forEach(element => {
-        const value = copy[element.dataset.i18n];
-        if (value) element.textContent = value;
+      document.querySelectorAll('[data-i18n]').forEach(function(el) {
+        var value = copy[el.dataset.i18n];
+        if (value) el.textContent = value;
       });
 
-      languageOptions.forEach(option => {
-        const active = option.dataset.lang === language;
+      if (gplayBadge) {
+        var locale = language === 'es' ? 'es' : 'en_us';
+        var suffix = language === 'es' ? 'es' : 'en';
+        gplayBadge.src = 'https://play.google.com/intl/' + locale + '/badges/static/images/badges/' + suffix + '_badge_web_generic.png';
+        gplayBadge.alt = language === 'es' ? 'Disponible en Google Play' : 'Get it on Google Play';
+      }
+
+      languageOptions.forEach(function(option) {
+        var active = option.dataset.lang === language;
         option.classList.toggle('active', active);
         option.setAttribute('aria-pressed', String(active));
       });
 
-      localStorage.setItem('waitaround-bio-language', language);
+      try { localStorage.setItem('waitaround-bio-language', language); } catch(e) {}
     }
 
     function openBookingForm() {
@@ -535,51 +625,47 @@
     }
 
     function buildBookingMessage(copy) {
-      const selectedBusinessType = businessType.options[businessType.selectedIndex].textContent.trim();
-      const selectedBookingNeed = bookingNeed.options[bookingNeed.selectedIndex].textContent.trim();
-      const selectedBookingPlatform = bookingPlatform.options[bookingPlatform.selectedIndex].textContent.trim();
-
+      var selBusiness = businessType.options[businessType.selectedIndex].textContent.trim();
+      var selNeed = bookingNeed.options[bookingNeed.selectedIndex].textContent.trim();
+      var selPlatform = bookingPlatform.options[bookingPlatform.selectedIndex].textContent.trim();
       return [
-        copy.formMessageTitle,
-        '',
-        `${copy.formBusinessType}: ${selectedBusinessType}`,
-        `${copy.formNeed}: ${selectedBookingNeed}`,
-        `${copy.formPlatform}: ${selectedBookingPlatform}`
+        copy.formMessageTitle, '',
+        copy.formBusinessType + ': ' + selBusiness,
+        copy.formNeed + ': ' + selNeed,
+        copy.formPlatform + ': ' + selPlatform
       ].join('\n');
     }
 
-    languageOptions.forEach(option => {
-      option.addEventListener('click', () => setLanguage(option.dataset.lang));
+    languageOptions.forEach(function(option) {
+      option.addEventListener('click', function() { setLanguage(option.dataset.lang); });
     });
 
-    bookingOpenButtons.forEach(button => {
+    bookingOpenButtons.forEach(function(button) {
       button.addEventListener('click', openBookingForm);
     });
 
     bookingCloseButton.addEventListener('click', closeBookingForm);
 
-    bookingModal.addEventListener('click', event => {
+    bookingModal.addEventListener('click', function(event) {
       if (event.target === bookingModal) closeBookingForm();
     });
 
-    document.addEventListener('keydown', event => {
-      if (event.key === 'Escape' && bookingModal.classList.contains('open')) {
-        closeBookingForm();
-      }
+    document.addEventListener('keydown', function(event) {
+      if (event.key === 'Escape' && bookingModal.classList.contains('open')) closeBookingForm();
     });
 
-    bookingForm.addEventListener('submit', event => {
+    bookingForm.addEventListener('submit', function(event) {
       event.preventDefault();
-      if (!bookingForm.checkValidity()) {
-        bookingForm.reportValidity();
-        return;
-      }
-
-      const copy = translations[currentLanguage] || translations.en;
+      if (!bookingForm.checkValidity()) { bookingForm.reportValidity(); return; }
+      var copy = translations[currentLanguage] || translations.en;
       window.location.href = bookingBase + encodeURIComponent(buildBookingMessage(copy));
     });
 
-    setLanguage(localStorage.getItem('waitaround-bio-language') || 'en');
+    try {
+      setLanguage(localStorage.getItem('waitaround-bio-language') || 'en');
+    } catch(e) {
+      setLanguage('en');
+    }
   </script>
 </body>
 </html>
