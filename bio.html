@@ -215,6 +215,15 @@
       background: rgba(255,255,255,.56);
     }
 
+    .product-card__for {
+      margin: 0 0 4px;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+    }
+
     .product-card__name {
       margin: 0 0 4px;
       font-size: 14px;
@@ -380,6 +389,7 @@
       <div class="products">
 
         <div class="product-card">
+          <p class="product-card__for" data-i18n="providersFor">For barbers</p>
           <p class="product-card__name" data-i18n="providersName">waitAround Providers</p>
           <p class="product-card__desc" data-i18n="providersDesc">Run your walk-in line without the constant back-and-forth of texts and calls. You're in control of your daily clients.</p>
           <div class="product-card__badges">
@@ -394,6 +404,7 @@
         </div>
 
         <div class="product-card">
+          <p class="product-card__for" data-i18n="clientsFor">For barbers' clients</p>
           <p class="product-card__name" data-i18n="clientsName">waitAround Clients</p>
           <p class="product-card__desc" data-i18n="clientsDesc">Join your barber's line remotely. No calls, no waiting outside — get in line from anywhere.</p>
           <div class="product-card__badges">
@@ -501,8 +512,10 @@
         fullWebsite: 'Full Website',
         note: 'No complicated forms. Start with one message.',
         ourApps: 'Our Latest Products',
+        providersFor: 'For barbers',
         providersName: 'waitAround Providers',
         providersDesc: "Run your walk-in line without the constant back-and-forth of texts and calls. You're in control of your daily clients.",
+        clientsFor: "For barbers' clients",
         clientsName: 'waitAround Clients',
         clientsDesc: "Join your barber's line remotely. No calls, no waiting outside — get in line from anywhere.",
         formTitle: 'Start Conversation',
@@ -545,8 +558,10 @@
         fullWebsite: 'Sitio Completo',
         note: 'Sin formularios complicados. Empieza con un mensaje.',
         ourApps: 'Nuestros Últimos Productos',
+        providersFor: 'Para barberos',
         providersName: 'waitAround Providers',
         providersDesc: 'Administra tu fila, ajusta capacidad y manten a los clientes fluyendo — todo desde tu telefono.',
+        clientsFor: 'Para clientes del barbero',
         clientsName: 'waitAround Clients',
         clientsDesc: 'Unete a la fila de tu barbero desde donde estes. Sin llamadas ni esperas afuera.',
         formTitle: 'Empiezar Conversacion',
